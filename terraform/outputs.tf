@@ -52,3 +52,18 @@ output "availability_zones" {
   description = "Zones de disponibilité utilisées"
   value       = aws_subnet.public[*].availability_zone
 }
+
+output "alb_security_group_id" {
+  description = "Security Group du futur Application Load Balancer"
+  value       = aws_security_group.alb.id
+}
+
+output "ecs_security_group_id" {
+  description = "Security Group des tâches ECS"
+  value       = aws_security_group.ecs.id
+}
+
+output "rds_security_group_id" {
+  description = "Security Group de PostgreSQL RDS"
+  value       = aws_security_group.rds.id
+}

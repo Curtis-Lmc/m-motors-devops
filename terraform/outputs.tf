@@ -72,3 +72,13 @@ output "ecr_repository_url" {
   description = "Adresse du dépôt ECR contenant l'image FastAPI"
   value       = aws_ecr_repository.backend.repository_url
 }
+
+output "ecs_execution_role_arn" {
+  description = "ARN du rôle utilisé par ECS pour lancer les tâches"
+  value       = aws_iam_role.ecs_execution.arn
+}
+
+output "ecs_task_role_arn" {
+  description = "ARN du rôle utilisé par l'application FastAPI"
+  value       = aws_iam_role.ecs_task.arn
+}

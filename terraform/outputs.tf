@@ -82,3 +82,18 @@ output "ecs_task_role_arn" {
   description = "ARN du rôle utilisé par l'application FastAPI"
   value       = aws_iam_role.ecs_task.arn
 }
+
+output "ecs_cluster_name" {
+  description = "Nom du cluster ECS"
+  value       = aws_ecs_cluster.main.name
+}
+
+output "ecs_task_definition_arn" {
+  description = "ARN de la définition de tâche FastAPI"
+  value       = aws_ecs_task_definition.backend.arn
+}
+
+output "ecs_log_group_name" {
+  description = "Groupe CloudWatch contenant les logs FastAPI"
+  value       = aws_cloudwatch_log_group.ecs.name
+}

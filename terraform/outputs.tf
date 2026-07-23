@@ -67,3 +67,8 @@ output "rds_security_group_id" {
   description = "Security Group de PostgreSQL RDS"
   value       = aws_security_group.rds.id
 }
+
+output "ecr_repository_url" {
+  description = "Adresse du dépôt ECR contenant l'image FastAPI"
+  value       = aws_ecr_repository.backend.repository_url
+}

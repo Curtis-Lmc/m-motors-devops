@@ -32,3 +32,23 @@ output "frontend_url" {
   description = "URL HTTPS publique du frontend M-Motors"
   value       = "https://${aws_cloudfront_distribution.frontend.domain_name}"
 }
+
+output "vpc_id" {
+  description = "Identifiant du VPC principal"
+  value       = aws_vpc.main.id
+}
+
+output "public_subnet_ids" {
+  description = "Identifiants des deux subnets publics"
+  value       = aws_subnet.public[*].id
+}
+
+output "private_subnet_ids" {
+  description = "Identifiants des deux subnets privés"
+  value       = aws_subnet.private[*].id
+}
+
+output "availability_zones" {
+  description = "Zones de disponibilité utilisées"
+  value       = aws_subnet.public[*].availability_zone
+}

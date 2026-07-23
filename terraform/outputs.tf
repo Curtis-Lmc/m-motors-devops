@@ -17,3 +17,18 @@ output "documents_bucket_name" {
   description = "Nom du bucket privé contenant les dossiers clients"
   value       = aws_s3_bucket.documents.bucket
 }
+
+output "cloudfront_distribution_id" {
+  description = "Identifiant de la distribution CloudFront"
+  value       = aws_cloudfront_distribution.frontend.id
+}
+
+output "cloudfront_domain_name" {
+  description = "Nom de domaine généré par CloudFront"
+  value       = aws_cloudfront_distribution.frontend.domain_name
+}
+
+output "frontend_url" {
+  description = "URL HTTPS publique du frontend M-Motors"
+  value       = "https://${aws_cloudfront_distribution.frontend.domain_name}"
+}
